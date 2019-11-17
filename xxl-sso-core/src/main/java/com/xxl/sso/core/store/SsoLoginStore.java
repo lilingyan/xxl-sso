@@ -7,11 +7,19 @@ import com.xxl.sso.core.util.JedisUtil;
 /**
  * local login store
  *
+ * 就是对JedisUtil的封装
+ * 用于sessionId的操作
+ *
  * @author xuxueli 2018-04-02 20:03:11
  */
 public class SsoLoginStore {
 
     private static int redisExpireMinite = 1440;    // 1440 minite, 24 hour
+
+    /**
+     * 不允许小于3分钟
+     * @param redisExpireMinite
+     */
     public static void setRedisExpireMinite(int redisExpireMinite) {
         if (redisExpireMinite < 30) {
             redisExpireMinite = 30;

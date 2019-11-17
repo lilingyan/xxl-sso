@@ -12,6 +12,10 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private static List<UserInfo> mockUserList = new ArrayList<>();
+
+    /**
+     * 初始化一些假用户
+     */
     static {
         for (int i = 0; i <5; i++) {
             UserInfo userInfo = new UserInfo();
@@ -22,6 +26,12 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * 自己去实现哪里获取用户信息
+     * @param username
+     * @param password
+     * @return
+     */
     @Override
     public ReturnT<UserInfo> findUser(String username, String password) {
 

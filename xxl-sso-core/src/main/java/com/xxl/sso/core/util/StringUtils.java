@@ -28,6 +28,7 @@ public abstract class StringUtils {
 	private static boolean containsText(CharSequence str) {
 		int strLen = str.length();
 		for (int i = 0; i < strLen; i++) {
+			//如果不是空白字符
 			if (!Character.isWhitespace(str.charAt(i))) {
 				return true;
 			}

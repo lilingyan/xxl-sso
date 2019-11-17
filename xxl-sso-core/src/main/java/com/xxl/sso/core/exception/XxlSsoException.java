@@ -1,6 +1,9 @@
 package com.xxl.sso.core.exception;
 
 /**
+ *
+ * 当前项目中自定义的一些错误
+ *
  * @author xuxueli 2018-04-02 21:01:41
  */
 public class XxlSsoException extends RuntimeException {

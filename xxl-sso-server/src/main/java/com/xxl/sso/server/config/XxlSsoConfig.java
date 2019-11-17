@@ -19,6 +19,11 @@ public class XxlSsoConfig implements InitializingBean, DisposableBean {
     @Value("${xxl.sso.redis.expire.minite}")
     private int redisExpireMinite;
 
+    /**
+     * 在改配置类初始化后
+     * 设置缓存过期时间
+     * @throws Exception
+     */
     @Override
     public void afterPropertiesSet() throws Exception {
         SsoLoginStore.setRedisExpireMinite(redisExpireMinite);

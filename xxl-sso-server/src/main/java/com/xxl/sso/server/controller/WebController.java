@@ -62,6 +62,10 @@ public class WebController {
             String redirectUrl = request.getParameter(Conf.REDIRECT_URL);
             if (redirectUrl!=null && redirectUrl.trim().length()>0) {
 
+                /**
+                 * 如果未登录
+                 * 重定向的时候会带上当前域名下的sessionId
+                 */
                 String sessionId = SsoWebLoginHelper.getSessionIdByCookie(request);
                 String redirectUrlFinal = redirectUrl + "?" + Conf.SSO_SESSIONID + "=" + sessionId;;
 

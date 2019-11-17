@@ -61,16 +61,21 @@ public class SsoTokenLoginHelper {
      */
     public static XxlSsoUser loginCheck(String  sessionId){
 
+        //用户id
         String storeKey = SsoSessionIdHelper.parseStoreKey(sessionId);
         if (storeKey == null) {
             return null;
         }
 
+        //从redis获取用户
         XxlSsoUser xxlUser = SsoLoginStore.get(storeKey);
         if (xxlUser != null) {
             String version = SsoSessionIdHelper.parseVersion(sessionId);
             if (xxlUser.getVersion().equals(version)) {
 
+                /**
+                 * 延长过期时间
+                 */
                 // After the expiration time has passed half, Auto refresh
                 if ((System.currentTimeMillis() - xxlUser.getExpireFreshTime()) > xxlUser.getExpireMinite()/2) {
                     xxlUser.setExpireFreshTime(System.currentTimeMillis());

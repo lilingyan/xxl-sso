@@ -11,6 +11,9 @@ public class Conf {
 
     /**
      * sso sessionid, between browser and sso-server (web + token client)
+     *
+     * 用于区分redis中调用的服务
+     * 就是key的前缀
      */
     public static final String SSO_SESSIONID = "xxl_sso_sessionid";
 

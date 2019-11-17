@@ -38,6 +38,10 @@ public class AppController {
     @ResponseBody
     public ReturnT<String> login(String username, String password) {
 
+        /**
+         * 找到用户返回 正确code
+         * 可以自定义 解析方式
+         */
         // valid login
         ReturnT<UserInfo> result = userService.findUser(username, password);
         if (result.getCode() != ReturnT.SUCCESS_CODE) {

@@ -46,10 +46,14 @@ public class JedisUtil {
      */
 
     private static ShardedJedisPool shardedJedisPool;
+
+    //防止多次初始化
     private static ReentrantLock INSTANCE_INIT_LOCL = new ReentrantLock(false);
 
     /**
      * 获取ShardedJedis实例
+     *
+     * 获取分片redis
      *
      * @return
      */

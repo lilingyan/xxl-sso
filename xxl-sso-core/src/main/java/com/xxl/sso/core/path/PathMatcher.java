@@ -17,6 +17,8 @@ public interface PathMatcher {
 	 * method does not have to be used because direct equality comparisons
 	 * on the static path Strings will lead to the same result.
 	 *
+	 * 是否是可以被解析的
+	 *
 	 * @param path the path String to check
 	 * @return {@code true} if the given {@code path} represents a pattern
 	 */
@@ -24,6 +26,8 @@ public interface PathMatcher {
 
 	/**
 	 * Match the given {@code path} against the given {@code pattern}, according to this PathMatcher's matching strategy.
+	 *
+	 *	完全匹配
 	 *
 	 * @param pattern the pattern to match against
 	 * @param path the path String to test
@@ -36,6 +40,8 @@ public interface PathMatcher {
 	 * Match the given {@code path} against the corresponding part of the given {@code pattern}, according to this PathMatcher's matching strategy.
 	 *
 	 * <p>Determines whether the pattern at least matches as far as the given base path goes, assuming that a full path may then match as well.
+	 *
+	 * 头部分匹配
 	 *
 	 * @param pattern the pattern to match against
 	 * @param path the path String to test
